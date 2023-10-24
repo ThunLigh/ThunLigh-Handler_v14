@@ -20,6 +20,9 @@ module.exports = {
         const logs = options.getChannel("logs");
         const roladmin = options.getRole("role");
 
+        let dataSug = await setupSchema.findOne({ guildID: guild.id });
+        if(dataSug.sugerencias.canal == canal.id) return interaction.reply("❌ Este canal de sugerencias ya ha sido establecido, escoge otro.")
+
         let options_db = {
             canal: canal.id,
             canalLogs: logs.id,
