@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js')
 const setupSchema = require("../../models/setups.js");
 const { asegurar_db } = require("../../functions/Database/seversData.js");
+const emj = require("../../botconfig/emojis.json");
 
 module.exports = {
     cmd: new SlashCommandBuilder()
@@ -21,7 +22,7 @@ module.exports = {
         const roladmin = options.getRole("role");
 
         let dataSug = await setupSchema.findOne({ guildID: guild.id });
-        if(dataSug.sugerencias.canal == canal.id) return interaction.reply("❌ Este canal de sugerencias ya ha sido establecido, escoge otro.")
+        if(dataSug.sugerencias.canal == canal.id) return interaction.reply(`${emj.utility.error} **Este canal de sugerencias ya ha sido establecido, escoge otro.**`)
 
         let options_db = {
             canal: canal.id,
@@ -34,6 +35,6 @@ module.exports = {
         })
 
 
-        interaction.reply(`Hecho! el canal de sugerencias es: ${canal}`)
+        interaction.reply(`${emj.utility.hecho} **Ahora ${canal} es el nuevo canal de sugerencias.**`)
     }
 }

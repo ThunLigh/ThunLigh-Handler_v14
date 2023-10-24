@@ -2,6 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const Discord = require("discord.js");
 const setupSchema = require("../../models/setups.js");
 const { asegurar_db } = require("../../functions/Database/seversData.js");
+const emj = require("../../botconfig/emojis.json");
 
 module.exports = {
     cmd: new SlashCommandBuilder()
@@ -21,6 +22,8 @@ module.exports = {
         const { options, guild } = interaction;
 
         const canal = options.getChannel("canal");
+
+        let dataTicket = await setupSchema.findOne({ guildID: guild.id });
 
         let options_db = {
             canal: canal.id,
@@ -52,7 +55,7 @@ module.exports = {
             sistema_tickets: options_db,
         });
 
-        await interaction.reply(`✅ El sistema de tickets se ha activado correctamente en el canal de: ${canal}`)
+        await interaction.reply(`${emj.utility.hecho} **El sistema de tickets se ha activado correctamente en el canal de:** ${canal}`)
 
     }
 }
