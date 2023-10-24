@@ -49,7 +49,7 @@ const { SlashCommandBuilder } = require('discord.js')
 module.exports = {
     cmd: new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('Ping del bot'),
+        .setDescription('Muestra el ping del bot'),
 
     async execute(client, interaction) {
         await interaction.reply(`**🏓 Pong!** ${client.ws.ping}ms`)
