@@ -1,3 +1,5 @@
 .env
-/structure
+
+structure/
+
 node_modules/

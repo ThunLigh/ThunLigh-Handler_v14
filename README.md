@@ -1,4 +1,4 @@
-# ⚠️ Discord bot Handler - v14 ⚠️
+# 🤖 Discord bot Handler - v14 / MongoDB🤖
 
 ***Si usas el handler y tienes dudas sobre su uso o errores, únete al servidor de [soporte](https://discord.gg/sJ5ChUH9We) y te ayudaremos.***
 <br>
@@ -22,6 +22,8 @@
 TOKEN = "TOKEN-BOT"
 MONGO_URL = "MONGO-URL"
 
+STATUS = "dsc.gg/thunlighdev"
+STATUS_TYPE = "Watching"
 CLIENT_ID = "CLIENT-ID"
 OWNER_IDS = "OWNER-IDS"
 ```
@@ -45,6 +47,9 @@ A continuación te muestro la estructura de la creación del comando slash
 
 ```js
 const { SlashCommandBuilder } = require('discord.js')
+const Discord = require("discord.js");
+const emj = require("../../botconfig/emojis.json");
+const emb = require("../../botconfig/embed.json");
 
 module.exports = {
     cmd: new SlashCommandBuilder()
