@@ -14,8 +14,8 @@ module.exports = (client) => {
 
             const embed = new Discord.EmbedBuilder()
                 .setTitle(`Sugerencia de: ${message.author.username}`)
-                .setDescription(`> ${message.content}`)
-                .setColor("Random")
+                .setDescription("```" + message.content + "```")
+                .setColor("Orange")
                 .setThumbnail(message.author.displayAvatarURL({ dynamic: true }))
                 .setTimestamp()
 
@@ -24,6 +24,6 @@ module.exports = (client) => {
             const mensaje = await Channel.send({ embeds: [embed] })
             mensaje.react("👍")
             mensaje.react("👎")
-        } catch (e) { console.log("Ha ocurrido un error en ./src/handlers/sugerencias.js") }
+        } catch (err) { console.log(err) }
     })
 }

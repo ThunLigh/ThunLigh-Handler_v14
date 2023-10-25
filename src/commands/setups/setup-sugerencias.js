@@ -7,9 +7,12 @@ module.exports = {
     cmd: new SlashCommandBuilder()
         .setName('setup-sugerencias')
         .setDescription('Establece un canal de sugerencias')
-        .addChannelOption(option => option.setName("canal").setDescription("Canal de sugerencias").setRequired(true))
-        .addChannelOption(option => option.setName("logs").setDescription("Canal de registros").setRequired(true))
-        .addRoleOption(option => option.setName("role").setDescription("Rol que moderará las sugerencias").setRequired(true)),
+        .addChannelOption(option => option.setName("canal").setDescription("Canal de sugerencias").setRequired(true)),
+
+        owner: false,
+        permissions_bot: [],
+        permissions_member: [],
+        requiredroles: [],
 
     async execute(client, interaction) {
 

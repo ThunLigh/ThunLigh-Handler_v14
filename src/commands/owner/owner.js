@@ -2,13 +2,13 @@ const { SlashCommandBuilder } = require('discord.js')
 
 module.exports = {
     cmd: new SlashCommandBuilder()
-        .setName('bot')
-        .setDescription('Informacion del bot'),
+        .setName('owner')
+        .setDescription('Comando de dueño'),
     owner: true,
     permissions_bot: [],
     permissions_member: [],
 
     async execute(client, interaction) {
-        await interaction.reply({ content: `${client.user.tag}`, ephemeral: true })
+        await interaction.reply({ content: `Hola ${interaction.user} estás en la lista de dueños del bot`, ephemeral: true })
     }
 }

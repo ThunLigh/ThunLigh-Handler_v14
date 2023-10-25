@@ -9,7 +9,7 @@ module.exports = {
         .addUserOption(option => option.setName('usuario').setDescription('El usuario que quieres banear.').setRequired(true))
         .addStringOption(option => option.setName('razón').setDescription('La razón por la que quieres banear al usuario.').setRequired(false)),
 
-    owner: true,
+    owner: false,
     permissions_bot: ["Ban_Members"],
     permissions_member: ["Ban_Members"],
     requiredroles: [],

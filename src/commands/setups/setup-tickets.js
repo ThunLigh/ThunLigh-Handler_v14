@@ -10,7 +10,7 @@ module.exports = {
         .setDescription('Sistema de tickets')
         .addChannelOption(option => option.setName("canal").setDescription("Establece un canal de tickets").setRequired(true)),
 
-    owner: true,
+    owner: false,
     permissions_bot: [],
     permissions_member: [],
     requiredroles: [],
