@@ -1,7 +1,9 @@
-const fs = require("fs")
-const Discord = require("discord.js")
-const { Client } = require("discord.js");
-const client = new Client({
+const fs = require("fs");
+const Discord = require("discord.js");
+const { ClusterClient, getInfo } = require('discord-hybrid-sharding');
+const client = new Discord.Client({
+    shards: getInfo().SHARD_LIST,
+    shardCount: getInfo().TOTAL_SHARDS,
     intents: [
         Discord.GatewayIntentBits.Guilds,
         Discord.GatewayIntentBits.GuildMessages,
@@ -14,6 +16,7 @@ const client = new Client({
 require("../slashCommands")
 require("colors")
 
+client.cluster = new ClusterClient(client);
 client.slashCommands = new Discord.Collection();
 
 fs.readdirSync("./src/commands").forEach(subFolder => {

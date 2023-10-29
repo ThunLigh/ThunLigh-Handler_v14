@@ -1,7 +1,7 @@
 {
-    "color": "Blue",
+    "color": "#5865F2",
     "error": "Red",
     "correcto": "Green",
-    "footer_icon": "",
-    "footer_text": ""
+    "footer_icon": "https://imgur.com/JAEdLU6.png",
+    "footer_text": "© thunligh"
 }

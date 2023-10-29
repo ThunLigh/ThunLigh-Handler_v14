@@ -10,8 +10,8 @@ module.exports = {
         .addStringOption(option => option.setName('razón').setDescription('La razón por la que quieres desbanear al usuario.').setRequired(false)),
 
     owner: false,
-    permissions_bot: ["Ban_Members"],
-    permissions_member: ["Ban_Members"],
+    permissions_bot: ["BanMembers"],
+    permissions_member: ["BanMembers"],
     requiredroles: [],
 
     async execute(client, interaction) {
