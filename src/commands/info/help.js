@@ -68,14 +68,14 @@ module.exports = {
 
         const embed1 = new EmbedBuilder()
             .setTitle("🔎 __Comandos de Información__ 🔎")
-            .setDescription("```\nhelp, ping, stats\n```")
+            .setDescription("```\nhelp, ping, server\n```")
             .setFooter({ text: emb.footer_text, iconURL: emb.footer_icon })
             .setColor(emb.color)
             .setThumbnail(interaction.user.displayAvatarURL({ dynamic: true }))
 
         const embed2 = new EmbedBuilder()
         .setTitle("🛡️ __Comandos de Moderación__ 🛡️")
-        .setDescription("```\nban, unban\n```")
+        .setDescription("```\nban, unban, clear\n```")
         .setFooter({ text: emb.footer_text, iconURL: emb.footer_icon })
         .setColor(emb.color)
         .setThumbnail(interaction.user.displayAvatarURL({ dynamic: true }))

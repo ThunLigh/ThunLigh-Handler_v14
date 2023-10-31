@@ -12,7 +12,7 @@ async function intrc_paginacion(client, interaction, texto, titulo = "Paginació
         let embed = new Discord.EmbedBuilder()
             .setTitle(titulo.toString())
             .setDescription(desc.join(" "))
-            .setColor("Random")
+            .setColor(emb.color)
             .setThumbnail(interaction.guild.iconURL({ dynamic: true }));
         embeds.push(embed);
     }
@@ -27,7 +27,7 @@ async function intrc_paginacion(client, interaction, texto, titulo = "Paginació
     let row = new Discord.ActionRowBuilder()
         .addComponents([boton_atras, boton_inicio, boton_cerrar, boton_avanzar]);
 
-    let embedpaginas = await interaction.reply({
+    let embedpaginas = await interaction.channel.send({
         content: `***\`Usa los botones para pasar de página!\`***`,
         embeds: [embeds[0].setFooter({ text: `Página ${paginaActual + 1} / ${embeds.length}` })],
         components: [row]

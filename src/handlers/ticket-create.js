@@ -1,6 +1,7 @@
 const { asegurar_db } = require("../functions/Database/seversData.js");
 const setupSchema = require(`../models/setups.js`);
 const ticketSchema = require(`../models/ticket.js`);
+const emj = require("../botconfig/emojis.json")
 const Discord = require('discord.js');
 const html = require('discord-html-transcripts')
 
@@ -19,7 +20,7 @@ module.exports = client => {
             let ticket_data = await ticketSchema.find({ guildID: interaction.guild.id, autor: interaction.user.id, cerrado: false });
 
             for (const ticket of ticket_data) {
-                if (interaction.guild.channels.cache.get(ticket.canal)) return interaction.reply({ content: `❌ **Ya tienes un ticket creado en <#${ticket.canal}>**`, ephemeral: true });
+                if (interaction.guild.channels.cache.get(ticket.canal)) return interaction.reply({ content: `${emj.utility.error} **Ya tienes un ticket creado en <#${ticket.canal}>**`, ephemeral: true });
             }
 
             await interaction.reply({ content: "⌛ **Creando tu ticket...**", ephemeral: true });
@@ -62,7 +63,7 @@ module.exports = client => {
                 cerrado: false,
             });
             data.save();
-            await interaction.editReply({ content: `✅ **Ticket creado en ${channel}**`, ephemeral: true })
+            await interaction.editReply({ content: `${emj.utility.hecho} **Ticket creado en ${channel}**`, ephemeral: true })
 
         } catch (e) {
             console.log(e)
@@ -79,14 +80,14 @@ module.exports = client => {
             let ticket_data = await ticketSchema.findOne({ guildID: interaction.guild.id, canal: interaction.channel.id })
             switch (interaction.customId) {
                 case "cerrar_ticket": {
-                    if (ticket_data && ticket_data.cerrado) return interaction.reply({ content: `❌ **El ticket ya está cerrado**`, ephemeral: true });
+                    if (ticket_data && ticket_data.cerrado) return interaction.reply({ content: `${emj.utility.error} **El ticket ya está cerrado**`, ephemeral: true });
                     interaction.deferUpdate();
 
                     ticket_data.cerrado = true;
                     ticket_data.save();
 
                     interaction.channel.permissionOverwrites.edit(ticket_data.autor, { ViewChannel: false });
-                    interaction.channel.send(`✅ **Ticket cerrado por \`${interaction.user.tag}\`**`)
+                    interaction.channel.send(`${emj.utility.hecho} **Ticket cerrado por \`${interaction.user.tag}\`**`)
                 }
                     break;
 
