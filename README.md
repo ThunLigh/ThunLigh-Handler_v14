@@ -1,6 +1,6 @@
 # 🤖 Discord bot Handler - v14 / MongoDB🤖
 
-***Si usas el handler y tienes dudas sobre su uso o errores, únete al servidor de [soporte](https://discord.gg/sJ5ChUH9We) y te ayudaremos.***
+***Si usas el handler y tienes dudas sobre su uso o errores, únete al servidor de [soporte](https://discord.gg/4ZrXpYwT3Q) y te ayudaremos.***
 <br>
 
 <a href="https://discord.gg/sJ5ChUH9We" style="background-color: purple; color: white; font-weight: bold;padding: 8px;border-radius: 5px">Handler creado por ThunLigh</a>
@@ -63,7 +63,7 @@ module.exports = {
 ```
 
 ## ❤️ ¿Que te parece?
-***Gracias por usar este código! Puedes dejar tu reseña del handler en nuestro [servidor de soporte](https://discord.gg/Rduftvqjtz).***
+***Gracias por usar este código! Puedes dejar tu reseña del handler en nuestro [servidor de soporte](https://discord.gg/4ZrXpYwT3Q).***
 
 #🇪🇸 © [2023] ThunLigh
 
